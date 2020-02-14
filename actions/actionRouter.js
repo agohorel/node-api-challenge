@@ -13,6 +13,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", validateProjectID, async (req, res) => {
+  const { id } = req.params;
+  try {
+    const allActions = await actions.get();
+    const projectActions = allActions.filter(
+      action => action.project_id === Number(id)
+    );
+    res.status(200).json(projectActions);
+  } catch (error) {
+    res.status(500).json({ error: "Server error :(" });
+  }
+});
+
 router.post("/:id", validateProjectID, validateAction, async (req, res) => {
   const {
     body,
