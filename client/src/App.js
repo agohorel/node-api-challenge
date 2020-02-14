@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { Projects } from "./components/Projects";
 import { ProjectDetails } from "./components/ProjectDetails";
+import { GlobalStyle } from "./components/styledComponents";
 
 function App() {
   return (
     <div>
+      <GlobalStyle></GlobalStyle>
       <Router>
         <Route exact path="/projects">
           <Projects></Projects>

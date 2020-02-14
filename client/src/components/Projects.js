@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { Project } from "./Project";
+import { CardContainer } from "./styledComponents";
 
 export const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -14,10 +15,10 @@ export const Projects = () => {
   }, []);
 
   return (
-    <div>
+    <CardContainer>
       {projects.map(project => (
         <Project key={project.id} project={project}></Project>
       ))}
-    </div>
+    </CardContainer>
   );
 };

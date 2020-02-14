@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import { Action } from "./Action";
+import { CardContainer } from "./styledComponents";
 
 export const ProjectDetails = () => {
   const [actions, setActions] = useState([]);
@@ -16,10 +17,10 @@ export const ProjectDetails = () => {
   }, [params.id]);
 
   return (
-    <div>
-      {actions.map(action => (
-        <Action key={action.id} action={action}></Action>
+    <CardContainer>
+      {actions.map((action, i) => (
+        <Action key={action.id} action={action} index={i + 1}></Action>
       ))}
-    </div>
+    </CardContainer>
   );
 };
