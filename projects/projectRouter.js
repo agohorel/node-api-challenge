@@ -35,6 +35,16 @@ router.put("/:id", validateProjectID, validateProject, async (req, res) => {
   }
 });
 
+router.delete("/:id", validateProjectID, async (req, res) => {
+  const { id } = req.params;
+  try {
+    await projects.remove(id);
+    res.status(200).send(`successfully deleted item with id ${id}`);
+  } catch (error) {
+    res.status(500).json({ error: "Server error :(" });
+  }
+});
+
 function validateProject(req, res, next) {
   const { body } = req;
 
