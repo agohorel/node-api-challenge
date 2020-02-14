@@ -9,6 +9,7 @@ export const Card = styled.div`
   margin: 2rem;
   color: #eee;
   width: calc(33% - 4rem);
+  transition: 0.2s ease-out all;
 
   * {
     margin: 1rem;
@@ -20,6 +21,8 @@ export const Card = styled.div`
 
   :hover {
     background-color: #2c2c2c;
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
   }
 `;
 
