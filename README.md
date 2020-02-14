@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+We learned about Express' routing and middleware capabilities, and how these are used to extend the base functionality of Express, which at it's core exists as a lightweight library to provide a simpler api for using Node's built-in HTTP server functionality.
+
 - [ ] Describe Middleware?
+
+Middleware can be thought of as a "bridge" of sorts between two applications or two parts of an application. In the context of Express, we use middleware to extend the base capabilities of Express (which are spartan by design - "unopinionated") to do things like validation, authentication, etc. The middleware runs between the initial request and the response, optionally modifiying either the request or the response objects provided by Express.
 
 - [ ] Describe a Resource?
 
+A resource in the context of RESTful APIs refers to a single type of item, typically expressed as a noun, like 'users', 'posts', or 'comments'. RESTful APIs are typically designed in a such a way that a single endpoint corresponds to a single resource.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+APIs can return HTTP response headers in the 200 range to indicate that an operation succeeded.
+
 - [ ] How can we partition our application into sub-applications?
+
+We can split Express applications into parts by grouping up routes related to a given resource using Express' router() method. We can even go further by creating sub-routes within routes! Another way of breaking apart our APIs is to abstract our middleware into separate files to keep our router files clean.
 
 ## Minimum Viable Product
 
