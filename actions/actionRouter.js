@@ -42,6 +42,16 @@ router.put("/:id", validateActionID, validateAction, async (req, res) => {
   }
 });
 
+router.delete("/:id", validateActionID, async (req, res) => {
+  const { id } = req.params;
+  try {
+    await actions.remove(id);
+    res.status(200).send(`deleted action with id ${id}`);
+  } catch (error) {
+    res.status(500).json({ error: "Server error :(" });
+  }
+});
+
 async function validateProjectID(req, res, next) {
   const { id } = req.params;
   try {
