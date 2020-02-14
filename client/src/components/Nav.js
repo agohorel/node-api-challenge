@@ -2,10 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+import { StyledLink } from "./styledComponents";
+
 export const Nav = () => {
   return (
     <Navbar>
-      <Title>projectinator</Title>
+      <StyledLink to="/projects">
+        <Title>projectinator</Title>
+      </StyledLink>
       <div>
         <StyledNavLink exact to="/projects" activeStyle={activeStyles}>
           home
