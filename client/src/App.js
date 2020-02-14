@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import { Nav } from "./components/Nav";
 import { Projects } from "./components/Projects";
 import { ProjectDetails } from "./components/ProjectDetails";
 import { GlobalStyle } from "./components/styledComponents";
@@ -10,6 +11,7 @@ function App() {
     <div>
       <GlobalStyle></GlobalStyle>
       <Router>
+        <Nav></Nav>
         <Route exact path="/projects">
           <Projects></Projects>
         </Route>
